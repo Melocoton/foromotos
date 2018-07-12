@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Foromotos.com</title>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- My CSS -->
+	<link rel="stylesheet" href="css/mystyle.css">
+
+</head>
+
+<body class="body">
+
+	<!------------ HEADER ------------>
+	<!-- ***La clase "navbar-fixed" permite fijar el header en la parte superior en todo momento.
+		Si optamos por lo contrario solo hay que quitar esta clase.
+	 ***Como tenemos la opcion de iniciar sesion, deberemos mostrar una cosa u otra dependiendo
+	 	de si estamos logeados o no. Esto es b�sicamente un if/else como vemos mas abajo. Si
+	 	estamos <DESCONECTADO> mostraremos el boton de iniciar sesion, de lo contrario, si
+	 	estamos <CONECTADO> mostraremos el nombre del usuario y la opcion desconectarse.
+ -->
+	<header class="navbar-fixed">
+		<nav class="light-blue lighten-1 logo-vista">
+			<!--LOGOMOD logo-vista-->
+			<div class="nav-wrapper container">
+				<a href="index.html" class="brand-logo">
+					<img alt="" src="img/logo.png" width="100" height="100">
+				</a>
+				<!--LOGOMOD img-->
+
+				<!-- SI ESTAMOS DESCONECTADOS, LOGOMOD clase implementada  -->
+				<ul class="right hide-on-med-and-down paddingcentrarvertical">
+					<li>
+						<a class="btn modal-trigger " data-target="modal1">INICIAR SESI&Oacute;N
+							<i class="material-icons right">person</i>
+						</a>
+					</li>
+				</ul>
+
+				<!-- SI ESTAMOS CONECTADOS, LOGOMOD clase implementada       
+      <ul class="right hide-on-med-and-down paddingcentrarvertical">
+      	<li><a class="waves-effect waves-teal btn" href="#">Mi perfil<i class="material-icons right">person</i></a></li>
+        <li><a class="waves-effect waves-light btn red">Desconectar</a></li>
+      </ul> -->
+
+			</div>
+		</nav>
+	</header>
+	<!------------ /HEADER ------------>
+
+	<main class="main">
+		<!------------ CONTENT ------------>
+
+		<!------------ TITULO REGISTRO ------------>
+		<div class="section no-pad-bot" id="index-banner">
+			<div class="container">
+				<br>
+				<h1 class="header center orange-text">REG&Iacute;STRATE</h1>
+				<br>
+			</div>
+		</div>
+		<!------------ /TITULO REGISTRO ------------>
+		<!------------ FORMULARIO DE REGISTRO ------------>
+		<div class="container">
+			<div class="row">
+				<div class="col s6 offset-s3">
+					<div id="form-login ">
+						<!-- FORMULARIO -->
+						<form id="formValidate" name="formregistro" class="col s12 z-depth-5 formValidate" method="post" action="controller.html?op=registro">
+							<div class="row">
+								<div class="input-field	col s6">
+									<i class="material-icons prefix">person</i>
+									<input id="nombre" type="text" class="validate">
+          							<label for="nombre">Nombre</label>
+								</div>
+								<div class="input-field col s6">
+									<input id="apellido" type="text" class="validate">
+									<label for="apellido">Apellidos</label>
+								</div>
+								<div class="col s12">
+									<p>
+										<i class="small material-icons prefix">face</i>
+										<label>
+											<input name="group1" type="radio" checked />
+											<span>Hombre</span>
+										</label>
+										<label>
+											<input name="group1" type="radio" />
+											<span>Mujer</span>
+										</label>
+									</p>
+								</div>
+								<div class="input-field col s12">
+									<i class="small material-icons prefix">date_range</i>
+									<input type="text" class="datepicker">
+									<label for="dob">Nacimiento</label>
+								</div>
+								<div class="input-field col s12">
+									<i class="material-icons prefix">mail</i>
+									<input type="email" name="email" id="email">
+									<label for="email">Correo</label>
+								</div>
+								<div class="input-field col s12">
+									<i class="material-icons prefix">mail</i>
+									<input type="email" name="remail" id="remail">
+									<label for="remail">Confirmar correo</label>
+								</div>
+								<div class="input-field col s12">
+									<i class="material-icons prefix">fingerprint</i>
+									<input type="password" name="password" id="password">
+									<label for="password">Contrase&nacute;a</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s8">
+									<button class="btn submit right orange" type="submit" name="action">Registrarme</button>
+								</div>
+							</div>
+						</form>
+						<!-- /FORMULARIO -->
+					</div>
+				</div>
+			</div>
+		</div>
+		</br>
+		</br>
+		<!------------ /FORMULARIO DE REGISTRO ------------>
+
+		<!------------ /CONTENT ------------>
+	</main>
+
+	<!------------ FOOTER ------------>
+	<footer class="page-footer blue">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">Foromotos</h5>
+					<p class="grey-text text-lighten-4">
+						<a class="waves-effect waves-light btn-floating social facebook">
+							<i class="fa fa-facebook"></i> Sign in with facebook</a>
+						<a class="waves-effect waves-light btn-floating social google">
+							<i class="fa fa-google"></i> Sign in with google</a>
+						<a class="waves-effect waves-light btn-floating social twitter">
+							<i class="fa fa-twitter"></i> Sign in with twitter</a>
+						<a class="waves-effect waves-light btn-floating social reddit">
+							<i class="fa fa-reddit"></i> Sign in with reddit</a>
+					</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<blockquote style="border-left-color: yellow;">
+						<h5 class="white-text">Links</h5>
+						<ul>
+							<li>
+								<a class="grey-text text-lighten-3" href="#!">T&eacute;rminos y condiciones de uso</a>
+							</li>
+							<li>
+								<a class="grey-text text-lighten-3" href="#!">Pol&iacute;tica de privacidad</a>
+							</li>
+							<li>
+								<a class="grey-text text-lighten-3" href="#!">Pol&iacute;tica de Cookies</a>
+							</li>
+							<li>
+								<a class="grey-text text-lighten-3" href="#!">Sobre nosotros</a>
+							</li>
+						</ul>
+					</blockquote>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container center-align">
+				<!-- Borrar center-align para poner a la izquierda -->
+				&copy; 2017 Copyright I.E.S. Azarquiel
+				<a class="grey-text text-lighten-4 right" href="#!"></a>
+			</div>
+		</div>
+	</footer>
+	<!------------ /FOOTER ------------->
+
+
+	<!------------ DIALOGO LOGIN ------------>
+	<div id="modal1" class="col s12 z-depth-4 card-panel modal-fino modal">
+		<div class="modal-content">
+			<form method="post" class="col s12" name="formlogin" action="controller.html?op=login">
+				<div class="row">
+					<div class="input-field col s12 center">
+						<img src="http://www.castillalamancha.es/sites/default/files/logonuevoazul_1.png" alt="" width="150" height="150" class="responsive-img valign profile-image-login">
+						<!-- A�adir "circle" si queremos circulo -->
+					</div>
+				</div>
+				<div class="row margin">
+					<div class="input-field col s12">
+						<i class="material-icons prefix">person</i>
+						<input name="username " id="username" type="text" class="validate">
+						<label for="username" class="center-align">Usuario</label>
+					</div>
+					<div class="input-field col s12">
+						<i class="material-icons prefix">fingerprint</i>
+						<input name="password" id="password" type="password" class="validate">
+						<label for="password">Contrase&ntilde;a</label>
+					</div>
+					<div class=" col s12 m12 l12  login-text">
+						<input name="checkbox" type="checkbox" id="remember-me" class="validate" />
+						<label for="remember-me">No cerrar sesi&oacute;n</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<button class="btn modal-action modal-close waves-effect waves-light green col s12" type="submit" name="action">Iniciar sesi&oacute;n</button>
+					</div>
+					<div class="input-field col s12">
+						<button class="btn modal-close waves-effect waves-light pink col s12" type="button" name="action">Cancelar</button>
+					</div>
+					<div class="input-field col s6 m6 l6">
+						<p class="margin medium-small">
+							<a href="registro.html">Reg&iacute;strate ahora!</a>
+						</p>
+					</div>
+					<div class="input-field col s6 m6 l6">
+						<p class="margin right-align medium-small">
+							<a href="#!">¿Olvidaste la contrase&ntilde;a?</a>
+						</p>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!------------ /DIALOGO LOGIN ------------>
+
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var modals = document.querySelectorAll('.modal');
+			var instancesModal = M.Modal.init(modals);
+			var date = document.querySelectorAll('.datepicker');
+			var optionsDate = {
+				"format": "dd-mm-yyyy",
+				"firstDay": 1,
+				"yearRange": 100,
+				"i18n": {
+					"cancel": "Cancelar",
+					"done": "Aceptar",
+					"months": [
+						'Enero',
+						'Febrero',
+						'Marzo',
+						'Abril',
+						'Mayo',
+						'Junio',
+						'Julio',
+						'Agosto',
+						'Septiembre',
+						'Octubre',
+						'Noviembre',
+						'Diciembre'
+					],
+					"monthsShort": [
+						'Ene',
+						'Feb',
+						'Mar',
+						'Abr',
+						'May',
+						'Jun',
+						'Jul',
+						'Ago',
+						'Sep',
+						'Oct',
+						'Nov',
+						'Dic'
+					],
+					"weekdays": [
+						'Domingo',
+						'Lunes',
+						'Martes',
+						'Miercoles',
+						'Jueves',
+						'Viernes',
+						'Sabado'
+					],
+					"weekdaysShort": [
+						'Dom',
+						'Lun',
+						'Mar',
+						'Mie',
+						'Jue',
+						'Vie',
+						'Sab'
+					]
+				}
+			};
+			var instancesDate = M.Datepicker.init(date, optionsDate);
+		});
+	</script>
+
+
+
+</body>
+
+</html>

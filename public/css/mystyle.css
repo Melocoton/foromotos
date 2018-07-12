@@ -1,0 +1,106 @@
+.modal {
+	max-height: 90%
+}
+
+
+.modal-fino {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #fafafa;
+  padding: 0;
+  max-height: 90%;
+  width: 25%;
+  margin: auto;
+  overflow-y: auto;
+  border-radius: 2px;
+  will-change: top, opacity;
+}
+
+.modal-form-row {
+  margin-bottom: 0px;
+}
+
+.raya_amarilla {
+  border-left-color: yellow;
+}
+
+.body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+.main {
+	flex: 1 0 auto;
+}
+
+
+
+.imagen-slider1 {
+	background: url(http://www.motofavorits.lv/uploads/galleries/50476256a0f7d.jpg) center no-repeat;
+	background-size: 100%;
+}
+
+.imagen-slider2 {
+	background: url(http://www.motovoyager.com/Pictures/Stitch/BigBendNP1.jpg) center no-repeat;
+	background-size: 100% 100%;
+}
+
+.imagen-slider3 {
+	background: url(http://www.ski-epic.com/europemcycle2004/p022b_valley_pan.jpg) center no-repeat;
+	background-size: 100% 100%;
+}
+
+.imagen-slider4 {
+	background: url(http://www.bikersarewelcome.com/images/moto_scotland_landscape.jpg) center no-repeat;
+	background-size: 100% 100%;
+}
+
+
+.bordes-curvos {
+	border-radius: 0px 30px 30px 30px;
+	-moz-border-radius: 0px 30px 30px 30px;
+	-webkit-border-radius: 0px 30px 30px 30px;
+	border: 0px solid #000000;
+}
+
+
+
+
+
+
+
+
+.nopadding {
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+
+.error-color {
+	background-color: rgb(5,203,230);
+}
+
+
+.logo-vista {
+	height: 105px;
+}
+
+.paddingcentrarvertical {
+	padding-top: 20px;
+}
+
+.atras {
+	position: relative;
+	z-index: 0;
+}
+
+.marginabajo {
+	margin-bottom: -9px;
+}
+
+
+
+
