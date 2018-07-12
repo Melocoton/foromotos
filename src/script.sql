@@ -17,21 +17,27 @@ USE `foromotos` ;
 -- -----------------------------------------------------
 -- Table `foromotos`.`usuario`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `foromotos`.`usuario` ;
+
 CREATE TABLE IF NOT EXISTS `foromotos`.`usuario` (
   `idusuario` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
-  `contraseña` VARCHAR(250) NOT NULL,
+  `apellidos` VARCHAR(45) NOT NULL,
+  `clave` VARCHAR(250) NOT NULL,
   `correo` VARCHAR(250) NOT NULL,
   `fecha_registro` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `fecha_nacimiento` DATE NOT NULL,
   `sexo` TINYINT NOT NULL,
-  PRIMARY KEY (`idusuario`))
+  PRIMARY KEY (`idusuario`),
+  UNIQUE INDEX `correo_UNIQUE` (`correo` ASC))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
 -- Table `foromotos`.`tema`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `foromotos`.`tema` ;
+
 CREATE TABLE IF NOT EXISTS `foromotos`.`tema` (
   `idtema` INT NOT NULL AUTO_INCREMENT,
   `titulo` VARCHAR(150) NOT NULL,
@@ -51,6 +57,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `foromotos`.`post`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `foromotos`.`post` ;
+
 CREATE TABLE IF NOT EXISTS `foromotos`.`post` (
   `idpost` INT NOT NULL AUTO_INCREMENT,
   `contenido` TEXT NOT NULL,
