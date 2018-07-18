@@ -73,54 +73,54 @@
 				<div class="col s6 offset-s3">
 					<div id="form-login ">
 						<!-- FORMULARIO -->
-						<form id="formValidate" name="formregistro" class="col s12 z-depth-5 formValidate" method="post" action="controller.html?op=registro">
+						<form id="formregistro" name="formregistro" class="col s12 z-depth-5">
 							<div class="row">
 								<div class="input-field	col s6">
 									<i class="material-icons prefix">person</i>
-									<input id="nombre" type="text" class="validate">
+									<input id="nombre" name="nombre" type="text" class="validate">
           							<label for="nombre">Nombre</label>
 								</div>
 								<div class="input-field col s6">
-									<input id="apellido" type="text" class="validate">
-									<label for="apellido">Apellidos</label>
+									<input id="apellidos" name="apellidos" type="text" class="validate">
+									<label for="apellidos">Apellidos</label>
 								</div>
 								<div class="col s12">
 									<p>
 										<i class="small material-icons prefix">face</i>
 										<label>
-											<input name="group1" type="radio" checked />
+											<input name="sexo" type="radio" checked value="1"/>
 											<span>Hombre</span>
 										</label>
 										<label>
-											<input name="group1" type="radio" />
+											<input name="sexo" type="radio" value="2"/>
 											<span>Mujer</span>
 										</label>
 									</p>
 								</div>
 								<div class="input-field col s12">
 									<i class="small material-icons prefix">date_range</i>
-									<input type="text" class="datepicker">
+									<input id="fecha_nacimiento" type="text" name="fecha_nacimiento" class="datepicker">
 									<label for="dob">Nacimiento</label>
 								</div>
 								<div class="input-field col s12">
 									<i class="material-icons prefix">mail</i>
-									<input type="email" name="email" id="email">
-									<label for="email">Correo</label>
+									<input type="email" name="correo" id="correo">
+									<label for="correo">Correo</label>
 								</div>
 								<div class="input-field col s12">
 									<i class="material-icons prefix">mail</i>
-									<input type="email" name="remail" id="remail">
+									<input type="email" id="remail">
 									<label for="remail">Confirmar correo</label>
 								</div>
 								<div class="input-field col s12">
 									<i class="material-icons prefix">fingerprint</i>
-									<input type="password" name="password" id="password">
-									<label for="password">Contrase&nacute;a</label>
+									<input type="password" name="clave" id="clave">
+									<label for="clave">Contrase&nacute;a</label>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col s8">
-									<button class="btn submit right orange" type="submit" name="action">Registrarme</button>
+								<div class="col s12 center">
+									<a href="#!" class="btn orange" onclick="registrar()">Registrarme</a>
 								</div>
 							</div>
 						</form>
@@ -297,6 +297,27 @@
 			};
 			var instancesDate = M.Datepicker.init(date, optionsDate);
 		});
+		function registrar() {
+			let nombre = document.getElementById('nombre').value;
+			let apellidos = document.getElementById('apellidos').value;
+			let sexo; document.getElementsByName('sexo').forEach(radio => radio.checked ? sexo = radio.value : "");
+			let clave = document.getElementById('clave').value;
+			let correo = document.getElementById('correo').value;
+			let fecha_nacimiento = document.getElementById('fecha_nacimiento').value;
+
+			let xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					let result = JSON.parse(this.response);
+					if (result){
+						M.toast({html: result.msg});
+					}
+				}
+			};
+			xhttp.open("POST", "api/registrar", true);
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send(`nombre=${nombre}&apellidos=${apellidos}&sexo=${sexo}&clave=${clave}&correo=${correo}&fecha_nacimiento=${fecha_nacimiento}`);
+		}
 	</script>
 
 
